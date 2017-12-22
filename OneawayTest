@@ -1,0 +1,22 @@
+import org.junit.Test;
+
+import  static org.junit.Assert.*;
+
+public class OneawayTest {
+
+    @Test
+    public void OneawayTest(){
+        Oneaway classUnderTest = new Oneaway();
+        assertEquals(true ,classUnderTest.compareLength("pale","ple"));
+
+    }
+
+    @Test
+    public void OneawayTest1(){
+        Oneaway classUnderTest = new Oneaway();
+        assertEquals(false ,classUnderTest.compareLength("pale","bake"));
+
+    }
+
+
+}
