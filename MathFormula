@@ -1,0 +1,10 @@
+import java.util.*;
+
+public class MathFormula {
+
+    public int mathFormula(int num1, int num2)
+    {
+     int output = (num1*num1)+(num2*num2)+(2*num1*num2);
+        return output;
+    }
+}
