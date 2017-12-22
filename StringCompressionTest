@@ -1,0 +1,28 @@
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
+
+public class StringCompressionTest {
+
+    @Test
+    public void compressTest() {
+        StringCompression classUnderTest = new StringCompression();
+           assertEquals("a2b3a1", classUnderTest.compress("aabbba"));
+    }
+
+    @Test
+    public void compressTest1() {
+        StringCompression classUnderTest = new StringCompression();
+        assertEquals("a1b2c3d4", classUnderTest.compress("abbcccdddd"));
+    }
+
+    @Test
+    public void compressTest2() {
+        StringCompression classUnderTest = new StringCompression();
+        assertEquals("abc", classUnderTest.compress("abc"));
+    }
+
+
+
+}
