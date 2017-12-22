@@ -1,0 +1,18 @@
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+public class MathFormulaTest {
+
+    @Test
+    public void MathFormulaTest() {
+        MathFormula classUnderTest = new MathFormula();
+        assertEquals(9,classUnderTest.mathFormula(2,1));
+    }
+
+    @Test
+    public void MathFormulaTest1() {
+        MathFormula classUnderTest = new MathFormula();
+        assertEquals(225,classUnderTest.mathFormula(10,5));
+    }
+}
