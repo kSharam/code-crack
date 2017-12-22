@@ -1,0 +1,23 @@
+import java.util.*;
+
+import static java.lang.Math.random;
+
+
+public class RotateMatrix {
+
+
+    public int[][] Rotate(int[][] Matrix, int n) {
+        int x=0;
+        int y=0;
+        int[][] RotatedMatrix= new int[n][n];
+        for (int row = 0; row < n; row++) {
+            for (int col = 0; col < n; col++)
+            {
+                y=(n-1)-row;
+                x=col;
+               RotatedMatrix[x][y]= Matrix[row][col];
+            }
+
+        }return RotatedMatrix;
+    }
+}
