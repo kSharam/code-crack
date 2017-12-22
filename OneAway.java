@@ -1,47 +1,46 @@
-package com.company;
+
 import java.util.*;
 
-/**
- * Created by sharmi on 8/25/17.
- */
-public class OneAway {
-    public void compareLength(String s1, String s2)
+public class Oneaway {
+    public boolean compareLength(String s1, String s2)
     {
+        boolean output=false;
         if (s1.length() == s2.length())
         {
-            replaceChar(s1, s2);
+           output= replaceChar(s1, s2);
 
         }
         else if((s1.length() < s2.length()) | (s1.length() > s2.length()))
         {
-            removeInsertChar(s1, s2);
+            output= removeInsertChar(s1, s2);
         }
-
+       return output;
     }
 
-    public void replaceChar(String s1, String s2)
+    public boolean replaceChar(String s1, String s2)
     {
         int replaceCounter=0;
         int i=0;
-            for(int j=0; j< s2.length(); j++)
+        for(int j=0; j< s2.length(); j++)
+        {
+            if(!(s1.charAt(i) == s2.charAt(j)))
             {
-                if(!(s1.charAt(i) == s2.charAt(j)))
-                {
-                    replaceCounter++;
-                    System.out.println("One edit: REPLACED at " + i );
-                    i++;
-                    if(replaceCounter>1)
-                    {System.out.print("**MORE THAN ONE EDIT**");
-                    break;}
-                }
-                else
-                {
-                    i=i+1;
-                }
+                replaceCounter++;
+                System.out.println("One edit: REPLACED at " + i );
+                i++;
+                if(replaceCounter>1)
+                {System.out.print("**MORE THAN ONE EDIT**");
+                   return false;}
             }
+            else
+            {
+                i=i+1;
+            }
+        }
+        return true;
     }
 
-    public void removeInsertChar(String s1, String s2)
+    public boolean removeInsertChar(String s1, String s2)
     {
         int edit=0;
         int j=0;
@@ -52,13 +51,14 @@ public class OneAway {
                 edit++;
                 System.out.println("One edit at " + i );
                 if((edit>1)| ((j+1)==s2.length()))
-                {break;}
+                {return false;}
             }
             else
             {
-               if((j+1)<s2.length()) j=j+1;
+                if((j+1)<s2.length()) j=j+1;
             }
 
         }
+        return true;
     }
 }
