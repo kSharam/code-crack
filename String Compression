@@ -1,0 +1,33 @@
+import java.util.*;
+
+
+public class StringCompression {
+
+    public String compress(String input) {
+
+        int counter = 1;
+        StringBuilder sentence = new StringBuilder();
+        char current= input.charAt(0);
+        sentence.append(current);
+
+        for (int j = 1; j < input.length(); j++)
+        {
+            if(input.charAt(j) == current)
+            {
+                counter++;
+
+            }
+            else
+            {
+                sentence.append(counter);
+                counter=1;
+                current= input.charAt(j);
+                sentence.append(current);
+            }
+        }
+        sentence.append(counter);
+        return input.length() < sentence.length() ? input : sentence.toString();
+    }
+
+
+}
