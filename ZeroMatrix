@@ -1,0 +1,41 @@
+
+public class Zeromatrix {
+
+    public int[][] zero(int[][] matrix, int n) {
+        int[][] newmatrix = new int[9][9];
+        for (int row = 0; row < n; row++) {
+            for (int col = 0; col < n; col++) {
+                newmatrix[row][col] = matrix[row][col];
+            }
+        }
+
+        for (int row = 0; row < n; row++) {
+            for (int col = 0; col < n; col++) {
+                if (matrix[row][col] == 0) {
+                    newmatrix = zeroRow(row, n, newmatrix);
+                    newmatrix = zeroCol(col, n, newmatrix);
+                }
+            }
+        }
+        return newmatrix;
+    }
+
+    public int[][] zeroRow(int row, int n, int[][] matrix) {
+
+        for (int col = 0; col < n; col++) {
+            matrix[row][col] = 0;
+
+        }
+        return matrix;
+    }
+
+
+    public int[][] zeroCol(int col, int n, int[][] matrix) {
+
+        for (int row = 0; row < n; row++) {
+            matrix[row][col] = 0;
+
+        }
+        return matrix;
+    }
+}
