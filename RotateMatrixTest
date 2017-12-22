@@ -1,0 +1,35 @@
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
+
+public class RotateMatrixTest {
+    @Test
+    public void RotateMatrixTest() {
+        RotateMatrix classUnderTest = new RotateMatrix();
+                   int[][] Matrix = new int[2][2];
+            int row = 0;
+            int col = 0;
+            int count =10;
+            for (row = 0; row < 2; row++) {
+                for (col = 0; col < 2; col++) {
+                    Matrix[row][col] = count;
+                    count++;
+                }
+            }
+            int[][] rotate90 = classUnderTest.Rotate(Matrix,2);
+            int[][] rotate180 = classUnderTest.Rotate(rotate90,2);
+            int[][] rotate270 = classUnderTest.Rotate(rotate180,2);
+            int[][] rotate360 = classUnderTest.Rotate(rotate270,2);
+
+           for (int i=0; i<2; i++)
+           {
+               for(int j=0; j<2; j++)
+               {
+                   assertEquals(rotate360[i][j], Matrix[i][j]);
+               }
+           }
+        }
+        }
+
+
