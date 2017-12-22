@@ -1,0 +1,19 @@
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+public class checkPermTest {
+
+    @Test
+    public void checkPermTest() {
+        checkPermutation classUnderTest = new checkPermutation();
+        assertEquals(true, classUnderTest.checkPerm("cat", "act"));
+    }
+
+    @Test
+    public void checkPermTest1() {
+        checkPermutation classUnderTest = new checkPermutation();
+        assertEquals(false, classUnderTest.checkPerm("cab", "act"));
+    }
+
+}
