@@ -1,0 +1,30 @@
+public class checkPermutation{
+
+public boolean checkPerm(String s1, String s2) {
+    char[] s1letters;
+    if (s1.length() == s2.length())
+    {
+        int[] numberCount = new int[128];
+        s1letters = s1.toCharArray();
+        for(char s1char : s1letters)
+        {
+            numberCount[s1char]++;
+        }
+        for(int i=0; i< s2.length(); i++)
+        {
+            int count = (int) (s2.charAt(i));
+            numberCount[count]--;
+            if(numberCount[count]<0)
+            {
+                return false;
+            }
+
+        }
+    }
+
+    else {return false;}
+    return true;
+}
+
+
+}
